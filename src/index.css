@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.modal {
+  display: block;
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: 6% auto;
+
+  padding: 20px;
+  width: 45%;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: -35px;
+  right: 5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  z-index: 1; /* Ensure the close button is on top */
+}
+
+.close:hover,
+.close:focus {
+  color: #fc7f1b;
+  text-decoration: none;
+  cursor: pointer;
+}
+.carousel .control-arrow,
+.carousel.carousel-slider .control-arrow {
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+  font-size: 24px;
+  line-height: 40px;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+}
+
+.carousel.carousel-slider .control-arrow {
+  top: 40% !important;
+}
+.modal .carousel.carousel-slider .control-arrow {
+  background-color: #fff !important;
+  top: 33% !important;
+}
+.modal .carousel .control-next.control-arrow::before {
+  content: "";
+  width: 7px !important;
+  height: 7px !important;
+  border: 3px solid !important;
+  border-color: black transparent transparent black !important;
+  transform: rotate(135deg) !important;
+}
+.modal .carousel .control-prev.control-arrow::before {
+  content: "";
+  width: 7px !important;
+  height: 7px !important;
+  border: 3px solid !important;
+  border-color: black transparent transparent black !important;
+  transform: rotate(-45deg) !important;
+}
+.modal .carousel.carousel-slide {
+  position: inherit;
+}
+.modal .carousel .control-prev.control-arrow:hover::before,
+.modal .carousel .control-next.control-arrow:hover::before {
+  border-color: #ed822c transparent transparent #ed822c !important;
+}
+.modal .carousel .control-arrow,
+.modal .carousel.carousel-slider .control-arrow {
+  opacity: 1 !important;
+}
+.carousel-status {
+  display: none !important;
+}
+.modal .control-next {
+  left: 83% !important;
+  z-index: 101 !important;
+}
+.modal .control-prev {
+  left: 9% !important;
+}
+
+.modal .carousel.carousel-slider {
+  margin: 0 auto !important;
+  position: inherit !important;
+}
+.carousel {
+  display: flex;
+  justify-content: space-around !important;
+}
+.thumbs {
+  padding: 0;
+}
+.carousel .slider-wrapper {
+  border-radius: 10px;
+}
