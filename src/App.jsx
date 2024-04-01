@@ -52,127 +52,129 @@ const App = () => {
   return (
     <>
       <div className="container">
-        <nav>
-          {screenSize < 768 ? (
-            <>
-              <div className={` ${navBtn ? "sideMenuContainer" : ""}`}>
-                <div className={`sideMenu ${navBtn ? "open" : ""}`}>
-                  <button onClick={handleNavShow} className="toggleBtn">
-                    {navBtn ? <Close /> : <Menu />}
-                  </button>
-                  {navBtn ? (
-                    <ul>
-                      <li>
-                        <button onClick={handleNavShow} className="toggleBtn">
-                          {navBtn ? <Close /> : <Menu />}
-                        </button>
-                      </li>
-                      <li>
-                        <a href="./">Collections</a>
-                      </li>
-                      <li>
-                        <a href="./">Men</a>
-                      </li>
-                      <li>
-                        <a href="./">Women</a>
-                      </li>
-                      <li>
-                        <a href="./">About</a>
-                      </li>
-                      <li>
-                        <a href="./">Contact</a>
-                      </li>
-                    </ul>
-                  ) : (
-                    ""
-                  )}
+        <header>
+          <nav>
+            {screenSize < 768 ? (
+              <>
+                <aside className={` ${navBtn ? "sideMenuContainer" : ""}`}>
+                  <div className={`sideMenu ${navBtn ? "open" : ""}`}>
+                    <button onClick={handleNavShow} className="toggleBtn">
+                      {navBtn ? <Close /> : <Menu />}
+                    </button>
+                    {navBtn ? (
+                      <ul>
+                        <li>
+                          <button onClick={handleNavShow} className="toggleBtn">
+                            {navBtn ? <Close /> : <Menu />}
+                          </button>
+                        </li>
+                        <li>
+                          <a href="./">Collections</a>
+                        </li>
+                        <li>
+                          <a href="./">Men</a>
+                        </li>
+                        <li>
+                          <a href="./">Women</a>
+                        </li>
+                        <li>
+                          <a href="./">About</a>
+                        </li>
+                        <li>
+                          <a href="./">Contact</a>
+                        </li>
+                      </ul>
+                    ) : (
+                      ""
+                    )}
 
-                  <h1 href="./" className="sneaker">
-                    <Logo />
-                  </h1>
-                </div>
-              </div>
-            </>
-          ) : (
-            <ul>
-              <h1 href="./" className="sneaker">
-                <Logo />
-              </h1>
+                    <h1 href="./" className="sneaker">
+                      <Logo />
+                    </h1>
+                  </div>
+                </aside>
+              </>
+            ) : (
+              <ul>
+                <h1 href="./" className="sneaker">
+                  <Logo />
+                </h1>
 
-              <li>
-                <a href="./">Collections</a>
-              </li>
-              <li>
-                <a href="./">Men</a>
-              </li>
-              <li>
-                <a href="./">Women</a>
-              </li>
-              <li>
-                <a href="./">About</a>
-              </li>
-              <li>
-                <a href="./">Contact</a>
-              </li>
-            </ul>
-          )}
-          <div className="profileAndCart">
-            <div>
-              <div className="cart">
-                <button onClick={handleShow} className="cursor shoppingCart">
-                  {" "}
-                  <span className="cart-icon">
-                    <Cart />
-                  </span>
-                  {cartItems.length > 0 ? (
-                    <span className="cartItemCount">{cartItems.length}</span>
-                  ) : (
-                    <span className="cartItemCount">0</span>
-                  )}
-                </button>{" "}
-              </div>
-              {showItem ? (
-                cartItems.length > 0 ? (
-                  <div className="cartItem">
+                <li>
+                  <a href="./">Collections</a>
+                </li>
+                <li>
+                  <a href="./">Men</a>
+                </li>
+                <li>
+                  <a href="./">Women</a>
+                </li>
+                <li>
+                  <a href="./">About</a>
+                </li>
+                <li>
+                  <a href="./">Contact</a>
+                </li>
+              </ul>
+            )}
+            <div className="profileAndCart">
+              <div>
+                <div className="cart">
+                  <button onClick={handleShow} className="cursor shoppingCart">
                     {" "}
-                    <h4>Cart</h4>
-                    <div>
-                      <div className="productInfo">
-                        <img
-                          src={imageProduct1}
-                          alt=""
-                          className="productImg"
-                        />
-                        <div>
-                          <p>Fall Limited Edition Sneakers</p>
-                          <p className="">
-                            $125.00 x {cartItems.length}{" "}
-                            <span>${125 * cartItems.length}.00</span>
-                          </p>
+                    <span className="cart-icon">
+                      <Cart />
+                    </span>
+                    {cartItems.length > 0 ? (
+                      <span className="cartItemCount">{cartItems.length}</span>
+                    ) : (
+                      <span className="cartItemCount">0</span>
+                    )}
+                  </button>{" "}
+                </div>
+                {showItem ? (
+                  cartItems.length > 0 ? (
+                    <div className="cartItem">
+                      {" "}
+                      <h4>Cart</h4>
+                      <div>
+                        <div className="productInfo">
+                          <img
+                            src={imageProduct1}
+                            alt=""
+                            className="productImg"
+                          />
+                          <div>
+                            <p>Fall Limited Edition Sneakers</p>
+                            <p className="">
+                              $125.00 x {cartItems.length}{" "}
+                              <span>${125 * cartItems.length}.00</span>
+                            </p>
+                          </div>
+                          <img src={deleteIcon} alt="" className="deleteIcon" />
                         </div>
-                        <img src={deleteIcon} alt="" className="deleteIcon" />
+                        <button className="checkout cursor">Checkout</button>
                       </div>
-                      <button className="checkout cursor">Checkout</button>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="emptyCart">
+                      <h4>Cart</h4>
+                      <p>Your cart is empty</p>
+                    </div>
+                  )
                 ) : (
-                  <div className="emptyCart">
-                    <h4>Cart</h4>
-                    <p>Your cart is empty</p>
-                  </div>
-                )
-              ) : (
-                ""
-              )}
+                  ""
+                )}
+              </div>
+              <img src={Img} alt="" />{" "}
             </div>
-            <img src={Img} alt="" />{" "}
-          </div>
-        </nav>
-        <div className="main">
+          </nav>
+        </header>
+        <main className="main">
           <div className="images">
             <CarouselInMain />
           </div>
-          <div className="details">
+          <section className="details">
             {" "}
             <h3>SNEAKER COMPANY</h3>
             <h1>Fall Limited Edition Sneakers</h1>
@@ -216,8 +218,8 @@ const App = () => {
                 Add to cart
               </button>
             </div>
-          </div>
-        </div>
+          </section>
+        </main>
       </div>
     </>
   );
